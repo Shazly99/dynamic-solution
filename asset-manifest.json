@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/dynamic-solution/static/css/main.c9ca6c5d.css",
+    "main.js": "/dynamic-solution/static/js/main.9f5c7792.js",
+    "static/media/loginBg.png": "/dynamic-solution/static/media/loginBg.bebbc7cdd9fd594131a7.png",
+    "static/media/logo.png": "/dynamic-solution/static/media/logo.bebbc7cdd9fd594131a7.png",
+    "static/media/call-calling.svg": "/dynamic-solution/static/media/call-calling.a0b59bb05b47c1575eb9e9d3e9148c65.svg",
+    "static/media/dashboard.svg": "/dynamic-solution/static/media/dashboard.4a00c5a3c8935256dd57edf950e35528.svg",
+    "static/media/logout.svg": "/dynamic-solution/static/media/logout.2dde23f88fcaf36d47ead75ee3f294e4.svg",
+    "index.html": "/dynamic-solution/index.html",
+    "static/media/arrow-right.svg": "/dynamic-solution/static/media/arrow-right.12be4e88373100552dff450af57355af.svg",
+    "main.c9ca6c5d.css.map": "/dynamic-solution/static/css/main.c9ca6c5d.css.map",
+    "main.9f5c7792.js.map": "/dynamic-solution/static/js/main.9f5c7792.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9ca6c5d.css",
+    "static/js/main.9f5c7792.js"
+  ]
+}
