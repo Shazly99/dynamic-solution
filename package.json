@@ -1,7 +1,8 @@
 {
   "name": "admin",
   "version": "0.1.0",
-  "private": true, 
+  "homepage": "https://Shazly99.github.io/dynamic-solution",
+  "private": true,
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.2",
     "@mui/material": "^5.11.4",
@@ -25,6 +26,8 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

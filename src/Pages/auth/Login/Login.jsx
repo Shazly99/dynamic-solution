@@ -1,3 +1,4 @@
+import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
@@ -8,8 +9,6 @@ import * as Yup from 'yup';
 import Img from '../../../assets/Img';
 import LogoSvg from '../../../assets/svg/LogoSvg';
 import "./login.scss";
-import CircularProgress from '@mui/material/CircularProgress';
-import { apiheader } from '../../../utils/fetchData';
 
 
 let validationSchemaEmail = Yup.object().shape({
