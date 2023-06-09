@@ -26,7 +26,7 @@ const useFetch = () => {
     //   check token is vaid or not vaid
     const checkTokenVerify = async (accessToken) => {
         try {
-            const tokenVerify = await PostData(`${process.env.REACT_APP_API_URL}/api/token/verify/`,
+            const tokenVerify = await PostData(`${process.env.REACT_APP_API_URL}/token/verify/`,
                 {
                     token: accessToken
                 })
@@ -43,7 +43,7 @@ const useFetch = () => {
     // Get  ContactUs Clients Service
     const getAllContactUsClients = async (page) => {
         try {
-            const contactes = await GetData(`${process.env.REACT_APP_API_URL}/api/contact/?page=${page}`, apiheader)
+            const contactes = await GetData(`${process.env.REACT_APP_API_URL}/contact/?page=${page}`, apiheader)
                 .then((data) => {
                     return data;
                 });
@@ -72,7 +72,7 @@ const useFetch = () => {
     //   Get New token replace access token
     const checkTokenRefresh = async (token) => {
         try {
-            const tokenVerify = await PostData(`${process.env.REACT_APP_API_URL}/api/token/refresh/`,
+            const tokenVerify = await PostData(`${process.env.REACT_APP_API_URL}/token/refresh/`,
                 {
                     refresh: token
                 })

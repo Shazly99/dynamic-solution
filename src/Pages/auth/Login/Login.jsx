@@ -32,7 +32,7 @@ const Login = () => {
             if (values) {
                 setLoadEmail(true)
 
-               await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, values).then(({data})=>{
+               await axios.post(`${process.env.REACT_APP_API_URL}/login/`, values).then(({data})=>{
                     if (data.is_superuser === true) { 
                         localStorage.setItem("accessToken", data.access);
                         localStorage.setItem("refreshToken", data.refresh);
