@@ -33,22 +33,22 @@ const Login = () => {
             if (values) {
                 setLoadEmail(true)
 
-                let { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, values, apiheader);
-
-                if (data.is_superuser === true) {
-                    console.log(data.last_name);
-                    localStorage.setItem("accessToken", data.access);
-                    localStorage.setItem("refreshToken", data.refresh);
-                    localStorage.setItem("UserName", data.last_name);
-                    toast.success('Logged in successfully');
-                    navigate('/');
-                } else {
+               await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, values).then(({data})=>{
+                    if (data.is_superuser === true) { 
+                        localStorage.setItem("accessToken", data.access);
+                        localStorage.setItem("refreshToken", data.refresh);
+                        localStorage.setItem("UserName", data.last_name);
+                        toast.success('Logged in successfully');
+                        navigate('/');
+                    }   
+                }).catch(({response})=>{ 
                     setTimeout(() => {
                         setLoadEmail(false)
                     }, 1500);
-                    toast.error(data.ApiMsg);
+                    toast.error(response?.data?.detail);
+                })
 
-                }
+                
             }
         }
     });
