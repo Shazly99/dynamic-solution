@@ -20,7 +20,6 @@ const useFetch = () => {
                     // setClient([]);
                 });
         } catch (error) {
-            console.log(error);
         }
     };
 
@@ -63,12 +62,10 @@ const useFetch = () => {
             // Get Client
             await checkTokenRefresh(localStorage.getItem('refreshToken'))
                 .then(({ data }) => {
-                    console.log(data.access);
                     localStorage.setItem("accessToken", data.access);
                     getContactUsDataShared(1)
                 })
         } catch (error) {
-            console.log(error);
         }
     };
 
@@ -84,7 +81,6 @@ const useFetch = () => {
                 });
             return tokenVerify;
         } catch (error) {
-            console.log(error);
             return;
         }
     };

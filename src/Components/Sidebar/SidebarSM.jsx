@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import Img from "../../assets/Img";
 import { VendersContext } from "../../context/Store";
 import './Sidebar.scss';
-import SidebarMenu from './SidebarMenu';
 import routes from './route.js';
 
 const SidebarSM = ({ children }) => {
@@ -83,22 +82,7 @@ const SidebarSM = ({ children }) => {
             </div>
             <section className={isLang === 'ar' ? 'routes routesAr' : 'routes'}   >
               {
-                routes?.map((root, i) => {
-                  if (root.subRoutes) {
-                    return (
-                      <SidebarMenu
-                        key={i}
-                        setIsOpen={setIsOpen}
-                        route={root}
-                        showAnimation={showAnimation}
-                        isOpen={isOpen}
-                        open={isOpen}
-                        isLang={isLang}
-                        onClick={()=>setIsOpen(!isOpen)}
-                      />
-                    );
-                  }
-
+                routes?.map((root, i) => { 
                   return (
                     <motion.div
                       key={i}
@@ -112,10 +96,7 @@ const SidebarSM = ({ children }) => {
                       <NavLink to={root.path} onClick={()=>setIsOpen(!isOpen)} key={i} className="link " >
                         <div className="icon" id={root.name} data-tooltip-content={isLang === 'ar' ? root.nameAr : root.nameEn}>
                           {root.icon}
-                        </div>
-                        {/* {
-                          !isOpen && <ReactTooltip anchorId={root.name} data-tip={root.name} place="right" style={{ zIndex: 88888888, background: '#FAAA40' }} />
-                        } */}
+                        </div> 
 
                         <AnimatePresence>
                           {

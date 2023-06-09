@@ -47,8 +47,7 @@ const Contact = () => {
                     getContactUsData()
                 })
                 .catch((error) => {
-                    console.log(error);
-                    // setClient([]);
+                    console.log(error); 
                 });
         } catch (error) {
             console.log(error);
