@@ -9,6 +9,7 @@ import Img from '../../../assets/Img';
 import LogoSvg from '../../../assets/svg/LogoSvg';
 import "./login.scss";
 import CircularProgress from '@mui/material/CircularProgress';
+import { apiheader } from '../../../utils/fetchData';
 
 
 let validationSchemaEmail = Yup.object().shape({
@@ -32,7 +33,7 @@ const Login = () => {
             if (values) {
                 setLoadEmail(true)
 
-                let { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, values);
+                let { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, values, apiheader);
 
                 if (data.is_superuser === true) {
                     console.log(data.last_name);
