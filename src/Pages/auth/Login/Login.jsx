@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -97,8 +97,8 @@ const Login = () => {
                                             </div>
                                             <div className='w-100  d-flex align-items-center justify-content-center'>
                                                 <button disabled={!isValid} className={`${!isValid ? 'app__login-btn opisity ' : 'app__login-btn opisity1'} mt-3 `} type='submit'>
-                                                    {!loademail ?
-                                                        <div className="spinner-border " role="status"> </div>
+                                                    {loademail ?
+                                                        <Spinner size='sm' animation="border" variant="light" />
                                                         :
                                                         <LogoSvg.ArrowRight className='app__login-btn-icons ' />
                                                     }
