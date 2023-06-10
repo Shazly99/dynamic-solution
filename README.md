@@ -12,7 +12,7 @@ The website has main Features :
 - Protected Routes ==> must login to acces any page
 - page Not-Found
 - page contact-us fetch data when scroll
-- used in UI sass - MUI - framer-motion - axios 
+- used in UI sass  - framer-motion - axios 
 
 
 

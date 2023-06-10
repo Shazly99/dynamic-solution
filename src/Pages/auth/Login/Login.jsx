@@ -1,4 +1,3 @@
-import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
@@ -32,22 +31,22 @@ const Login = () => {
             if (values) {
                 setLoadEmail(true)
 
-               await axios.post(`${process.env.REACT_APP_API_URL}/login/`, values).then(({data})=>{
-                    if (data.is_superuser === true) { 
+                await axios.post(`${process.env.REACT_APP_API_URL}/login/`, values).then(({ data }) => {
+                    if (data.is_superuser === true) {
                         localStorage.setItem("accessToken", data.access);
                         localStorage.setItem("refreshToken", data.refresh);
                         localStorage.setItem("UserName", data.last_name);
                         toast.success('Logged in successfully');
                         navigate('/');
-                    }   
-                }).catch(({response})=>{ 
+                    }
+                }).catch(({ response }) => {
                     setTimeout(() => {
                         setLoadEmail(false)
                     }, 1500);
                     toast.error(response?.data?.detail);
                 })
 
-                
+
             }
         }
     });
@@ -98,7 +97,9 @@ const Login = () => {
                                             </div>
                                             <div className='w-100  d-flex align-items-center justify-content-center'>
                                                 <button disabled={!isValid} className={`${!isValid ? 'app__login-btn opisity ' : 'app__login-btn opisity1'} mt-3 `} type='submit'>
-                                                    {loademail ? <CircularProgress size={18} className={'customProgress'} /> :
+                                                    {!loademail ?
+                                                        <div className="spinner-border " role="status"> </div>
+                                                        :
                                                         <LogoSvg.ArrowRight className='app__login-btn-icons ' />
                                                     }
                                                 </button>
